@@ -4,6 +4,7 @@ import com.soulrebel.blog.exception.BlogAPIException;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
@@ -31,7 +32,7 @@ public class JwtTokenProvider {
                 .setSubject (username)
                 .setIssuedAt (currentDate)
                 .setExpiration (expiryDate)
-                .signWith (key ())
+                .signWith (key (), SignatureAlgorithm.HS256)
                 .compact ();
     }
 

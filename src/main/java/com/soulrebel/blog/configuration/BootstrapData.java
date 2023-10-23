@@ -15,7 +15,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class BootstrapData {
 
-    private final PasswordEncoder passwordEncoder;
+    final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
 

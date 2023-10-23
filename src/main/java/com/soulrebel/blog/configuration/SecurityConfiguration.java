@@ -17,6 +17,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
+
 @Configuration
 @EnableMethodSecurity
 @SecurityScheme(name = "Bearer Authentication",
@@ -32,11 +34,13 @@ public class SecurityConfiguration {
     public AuthenticationManager authenticationManagerBean(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager ();
     }
-
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf ().disable ();
         http.cors ().disable ();
+        http.authorizeHttpRequests().requestMatchers(antMatcher("/h2-console/**")).permitAll()
+                .and().csrf().ignoringRequestMatchers(antMatcher("/h2-console/**"))
+                .and().headers().frameOptions().disable();
 
         http.authorizeHttpRequests ().requestMatchers (HttpMethod.GET).permitAll ();
         http.authorizeHttpRequests ().requestMatchers ("/api/v1/auth/**").permitAll ();
