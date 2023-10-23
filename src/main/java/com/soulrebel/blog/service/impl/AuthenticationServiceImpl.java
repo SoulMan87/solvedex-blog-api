@@ -1,7 +1,7 @@
 package com.soulrebel.blog.service.impl;
 
 import com.soulrebel.blog.commons.AuthenticationServiceCommons;
-import com.soulrebel.blog.commons.security.JwtTokenProvider;
+import com.soulrebel.blog.security.JwtTokenProvider;
 import com.soulrebel.blog.exception.BlogAPIException;
 import com.soulrebel.blog.repository.RoleRepository;
 import com.soulrebel.blog.repository.UserRepository;

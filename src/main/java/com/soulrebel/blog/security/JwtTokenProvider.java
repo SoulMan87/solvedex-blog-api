@@ -1,4 +1,4 @@
-package com.soulrebel.blog.commons.security;
+package com.soulrebel.blog.security;
 
 import com.soulrebel.blog.exception.BlogAPIException;
 import io.jsonwebtoken.ExpiredJwtException;
