@@ -7,15 +7,15 @@ import java.util.List;
 
 public interface PostService {
 
-    PostDto createPost(final PostDto postDto);
+    PostDto createPost(PostDto postDto);
 
-    PostResponse getAllPosts(final int pageNumber, final int pageSize, final String sortBy, final String sortDirection);
+    PostResponse getAllPosts(int pageNumber, int pageSize, String sortBy, String sortDirection);
 
-    PostDto getPostById(final Long id);
+    PostDto getPostById(Long id);
 
-    PostDto updatePost(final Long id, final PostDto postDto);
+    PostDto updatePost(Long id, PostDto postDto);
 
-    void deletePost(final Long id);
+    void deletePost(Long id);
 
-    List<PostDto> getPostsByCategoryId(final Long categoryId);
+    List<PostDto> getPostsByCategoryId(Long categoryId);
 }

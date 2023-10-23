@@ -4,7 +4,7 @@ import com.soulrebel.blog.rest.LoginDto;
 import com.soulrebel.blog.rest.RegisterDto;
 
 public interface AuthenticationService {
-    String login(final LoginDto loginDto);
+    String login(LoginDto loginDto);
 
-    String register(final RegisterDto registerDto);
+    String register(RegisterDto registerDto);
 }
