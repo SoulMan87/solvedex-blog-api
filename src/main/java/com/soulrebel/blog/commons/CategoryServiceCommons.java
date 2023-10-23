@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public abstract class CategoryCommons {
+public abstract class CategoryServiceCommons {
 
 
     protected final CategoryRepository categoryRepository;

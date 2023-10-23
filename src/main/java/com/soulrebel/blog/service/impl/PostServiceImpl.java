@@ -50,17 +50,17 @@ public class PostServiceImpl extends PostServiceCommons implements PostService {
                 .filter (page -> page >= 0)
                 .orElseThrow (() -> new IllegalArgumentException (PAGE_NUMBER_CANNOT_BE_LESS_THAN_ZERO));
 
-        Sort sort = switch (sortDirection) {
+        final Sort sort = switch (sortDirection) {
             case ASC -> Sort.by (sortBy).ascending ();
             case DESC -> Sort.by (sortBy).descending ();
             default -> throw new IllegalArgumentException (INVALID_SORT_DIRECTION + sortDirection);
         };
 
-        Pageable pageable = PageRequest.of (pageNumber, pageSize, sort);
+        final Pageable pageable = PageRequest.of (pageNumber, pageSize, sort);
 
-        Page<Post> posts = postRepository.findAll (pageable);
+        final Page<Post> posts = postRepository.findAll (pageable);
 
-        List<PostDto> listOfPosts = posts.get ()
+        final List<PostDto> listOfPosts = posts.get ()
                 .map (this::mapToDto)
                 .toList ();
 
@@ -77,10 +77,10 @@ public class PostServiceImpl extends PostServiceCommons implements PostService {
 
     @Override
     public PostDto updatePost(final Long id, final PostDto postDto) {
-        Post post = postRepository.findById (id)
+        final Post post = postRepository.findById (id)
                 .orElseThrow (() -> new ResourceNotFoundException (POST, ID, id));
 
-        Category category = Optional.ofNullable (postDto.getCategoryId ())
+        final Category category = Optional.ofNullable (postDto.getCategoryId ())
                 .map (categoryRepository::findById)
                 .filter (Optional::isPresent)
                 .map (Optional::get)
@@ -94,7 +94,7 @@ public class PostServiceImpl extends PostServiceCommons implements PostService {
             post.setCategory (category);
         }
 
-        Post updatedPost = postRepository.save (post);
+        final Post updatedPost = postRepository.save (post);
 
         return mapToDto (updatedPost);
     }
@@ -108,7 +108,7 @@ public class PostServiceImpl extends PostServiceCommons implements PostService {
 
     @Override
     public List<PostDto> getPostsByCategoryId(final Long categoryId) {
-        var category = categoryRepository.findById (categoryId)
+        final var category = categoryRepository.findById (categoryId)
                 .orElseThrow (() -> new ResourceNotFoundException (CATEGORY, ID, categoryId));
 
         return postRepository.findAllByCategoryId (category.getId ())

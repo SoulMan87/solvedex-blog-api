@@ -1,6 +1,6 @@
 package com.soulrebel.blog.service.impl;
 
-import com.soulrebel.blog.commons.CategoryCommons;
+import com.soulrebel.blog.commons.CategoryServiceCommons;
 import com.soulrebel.blog.entity.Category;
 import com.soulrebel.blog.exception.ResourceNotFoundException;
 import com.soulrebel.blog.repository.CategoryRepository;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryServiceImpl extends CategoryCommons implements CategoryService {
+public class CategoryServiceImpl extends CategoryServiceCommons implements CategoryService {
 
     public CategoryServiceImpl(CategoryRepository categoryRepository, ModelMapper modelMapper) {
         super (categoryRepository, modelMapper);
