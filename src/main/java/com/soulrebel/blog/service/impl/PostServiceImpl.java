@@ -21,17 +21,10 @@ import java.util.Optional;
 
 @Service
 public class PostServiceImpl extends PostServiceCommons implements PostService {
-
-    private final PostRepository postRepository;
-    private final CategoryRepository categoryRepository;
-
-    public PostServiceImpl(ModelMapper modelMapper, PostRepository postRepository,
-                           CategoryRepository categoryRepository) {
-        super (modelMapper);
-        this.postRepository = postRepository;
-        this.categoryRepository = categoryRepository;
+    public PostServiceImpl(PostRepository postRepository, CategoryRepository categoryRepository,
+                           ModelMapper modelMapper) {
+        super (postRepository, categoryRepository, modelMapper);
     }
-
     @Override
     public PostDto createPost(final PostDto postDto) {
         return categoryRepository.findById (postDto.getCategoryId ())

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
 import java.util.function.Consumer;
 
 @Component
@@ -23,7 +24,6 @@ public abstract class CommentServiceCommons {
     public static final String COMMENT = "Comment";
     public static final String COMMENT_DOES_NOT_BELONGS_TO_POST = "Comment does not belong to post";
     public static final String COMMENT_DELETED_SUCCESSFULLY = "Comment deleted successfully";
-
 
 
     protected final ModelMapper modelMapper;
@@ -50,7 +50,6 @@ public abstract class CommentServiceCommons {
         }
         return comment;
     }
-
 
     protected <T> T validateAndUpdate(T value, Consumer<T> updateFunction) {
         if (value != null) {

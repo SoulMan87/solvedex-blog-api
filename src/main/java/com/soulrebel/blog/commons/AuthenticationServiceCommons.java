@@ -1,11 +1,11 @@
 package com.soulrebel.blog.commons;
 
-import com.soulrebel.blog.security.JwtTokenProvider;
 import com.soulrebel.blog.entity.User;
 import com.soulrebel.blog.exception.BlogAPIException;
 import com.soulrebel.blog.repository.RoleRepository;
 import com.soulrebel.blog.repository.UserRepository;
 import com.soulrebel.blog.rest.RegisterDto;
+import com.soulrebel.blog.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

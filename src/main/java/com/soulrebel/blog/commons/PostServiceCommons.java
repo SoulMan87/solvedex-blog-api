@@ -1,6 +1,8 @@
 package com.soulrebel.blog.commons;
 
 import com.soulrebel.blog.entity.Post;
+import com.soulrebel.blog.repository.CategoryRepository;
+import com.soulrebel.blog.repository.PostRepository;
 import com.soulrebel.blog.rest.PostDto;
 import com.soulrebel.blog.rest.model.PostResponse;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +25,9 @@ public abstract class PostServiceCommons {
     public static final String ASC = "ASC";
     public static final String DESC = "DESC";
 
-    private final ModelMapper modelMapper;
+    protected final PostRepository postRepository;
+    protected final CategoryRepository categoryRepository;
+    protected final ModelMapper modelMapper;
 
     protected Post mapToEntity(PostDto postDto) {
         return modelMapper.map (postDto, Post.class);
