@@ -20,11 +20,11 @@ public interface IAuthenticationController {
 
     @Operation(summary = "Authenticate user")
     @ApiResponse(responseCode = "200", description = "User authenticated")
-    @PostMapping(value = {"/login", "/signin"})
+    @PostMapping(value = {"/login"})
     ResponseEntity<JwtAuthenticationResponse> authenticateUser(@RequestBody LoginDto loginDto);
 
     @Operation(summary = "Authenticate user")
     @ApiResponse(responseCode = "200", description = "User authenticated")
-    @PostMapping(value = {"/register", "/signup"})
+    @PostMapping(value = {"/signup"})
     ResponseEntity<String> registerUser(@RequestBody RegisterDto registerDto);
 }

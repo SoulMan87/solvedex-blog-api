@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1
+
+app:
+  jwt-secret: 91c0648770b3bbec19981cb802375772d52210cc10dfff17c40aee9e84008e5b
+  jwt-expiration-milliseconds: 604800000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/blog_database
+    username: sa
+    password: sa
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
