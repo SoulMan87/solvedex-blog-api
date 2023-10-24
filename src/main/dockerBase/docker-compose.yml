@@ -12,16 +12,5 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
 
-  app:
-    build: dockerBase
-    ports:
-      - "8080:8080"
-    depends_on:
-      - postgres
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/blog_database
-      SPRING_DATASOURCE_USERNAME: sa
-      SPRING_DATASOURCE_PASSWORD: sa
-
 volumes:
   postgres-data:
