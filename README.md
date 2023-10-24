@@ -1,18 +1,18 @@
-# Solvedex Blog Api
+# [Solvedex](https://solvedex.com/) Blog Api
 
 Solvedex Blog Api. This project leverages cutting-edge technologies such as Java 17, Spring Framework 6, Spring Boot 3, Spring Security with JWT authentication, Spring Data JPA, Lombok, Spring DevTools, PostgreSQL for robust data storage, Swagger for documentation.
 ## Technologies
 
-- Java 17
-- Spring 6
-- Spring Boot 3
-- Spring Security JWT
-- Spring JPA
-- Lombok
-- Spring DevTools
-- Postgresql
-- Swagger
-- Docker
+- [Java 17](https://jdk.java.net/java-se-ri/17)
+- [Spring 6](https://spring.io/blog/2022/11/16/spring-framework-6-0-goes-ga)
+- [Spring Boot](https://spring.io/projects/spring-boot) 3
+- [Spring Security JWT](https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html)
+- [Spring JPA](https://spring.io/projects/spring-data-jpa)
+- [Lombok](https://projectlombok.org/)
+- [Spring DevTools](https://docs.spring.io/spring-boot/docs/1.5.16.RELEASE/reference/html/using-boot-devtools.html)
+- [Postgresql](https://www.postgresql.org/)
+- [Swagger UI](https://swagger.io/tools/swagger-ui/)
+- [Docker](https://www.docker.com/)
 
 ## Installation
 
